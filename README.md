@@ -5,7 +5,7 @@ https://documenter.getpostman.com/view/23767646/2s83zgvRGR
 ```
 ## Description
 
-simple blog api using nest js
+simple blog api using nest js and prisma ORM
 
 ## Installation
 
