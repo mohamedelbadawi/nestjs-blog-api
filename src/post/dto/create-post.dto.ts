@@ -8,5 +8,5 @@ export class CreatePostDto {
   @IsNotEmpty()
   @MinLength(10)
   body: string;
-  userId: number;
+  categoryId: number;
 }

@@ -25,18 +25,12 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.userService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.userService.update(+id, updateUserDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.userService.remove(+id);
+  @Get(':email')
+  async findOne(@Param('email') email: string) {
+    const user = await this.userService.findOne(email);
+    delete user.password;
+    delete user.createdAt;
+    delete user.updatedAt;
+    return user;
   }
 }
